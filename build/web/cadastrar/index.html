@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Animal - Pet Control</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #2C3E50; /* Fundo roxo */
+            font-family: Arial, sans-serif;
+        }
+
+        .image-container {
+            flex: 1;
+            background-color: #4a90e2;
+            background-image: url('../imagens/site.png'); /* Caminho ajustado */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .form-container {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; 
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            background-color: #6c757d; /* Cinza escuro */
+            width: 100%;
+            max-width: 200px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <!-- Div para a imagem -->
+    <div class="image-container"></div>
+    
+    <!-- Div para o formulário -->
+    <div class="form-container">
+        <!-- Formulário de cadastro -->
+        <form name="frmCadastroAnimal" method="post" action="cadastroAnimal.jsp">
+            <h1>Cadastro de Animal</h1>
+            <fieldset>
+                <legend>Informações do Animal</legend>
+
+                <label for="id">ID:</label>
+                <input type="number" id="id" name="id" required>
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="especie">Espécie:</label>
+                <input type="text" id="especie" name="especie" required>
+
+                <label for="raca">Raça:</label>
+                <input type="text" id="raca" name="raca">
+
+                <label for="tamanho">Tamanho:</label>
+                <select id="tamanho" name="tamanho" required>
+                    <option value="Pequeno">Pequeno</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Grande">Grande</option>
+                </select>
+
+                <label for="idade">Idade (em anos):</label>
+                <input type="number" id="idade" name="idade" min="0" required>
+
+                <label for="peso">Peso (em kg):</label>
+                <input type="number" id="peso" name="peso" step="0.01" min="0" required>
+            </fieldset>
+            <button type="submit">Cadastrar</button>
+            <button type="reset">Limpar</button>
+        </form>
+
+        <!-- Botão de Voltar -->
+        <a href="../index.html">
+            <button class="back-button">Voltar para a Tela Principal</button>
+        </a>
+    </div>
+</body>
+</html>
